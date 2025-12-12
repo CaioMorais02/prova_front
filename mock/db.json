@@ -1,6 +1,25 @@
 {
   "employees": [
-    { "id": 1, "name": "Ana", "email": "ana@empresa.com", "role": "Dev", "active": true },
-    { "id": 2, "name": "Bruno", "email": "bruno@empresa.com", "role": "QA", "active": true }
+    {
+      "name": "Ana",
+      "email": "ana@empresa.com",
+      "role": "Dev",
+      "active": true,
+      "id": "1"
+    },
+    {
+      "id": "2",
+      "name": "Bruno",
+      "email": "bruno@empresa.com",
+      "role": "QA",
+      "active": true
+    },
+    {
+      "id": "c1ff",
+      "name": "Caio",
+      "email": "caioedpm@gmail.com",
+      "role": "dev",
+      "active": true
+    }
   ]
 }

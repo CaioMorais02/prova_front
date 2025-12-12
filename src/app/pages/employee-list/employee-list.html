@@ -1,0 +1,46 @@
+<div class="container">
+    <h2>Lista de Funcionários</h2>
+
+    <div class="actions">
+        <input 
+            type="text"
+            placeholder="Buscar por nome ou email"
+            (input)="onSearch($event)"
+        >
+        <button routerLink="/employees/new">Novo Funcionário</button>
+    </div>
+
+    <table border="1" width="100%" cellpadding="10" style="margin-top: 20px; border-collapse: collapse;">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nome</th>
+                <th>Email</th>
+                <th>Cargo</th>
+                <th>Ativo</th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            @for (employee of employees(); track employee.id) {
+                <tr>
+                    <td>{{ employee.id }}</td>
+                    <td>{{ employee.name }}</td>
+                    <td>{{ employee.email }}</td>
+                    <td>{{ employee.role }}</td>
+                    <td>{{ employee.active ? 'Sim' : 'Não' }}</td>
+                    <td>
+                        <button [routerLink]="['/employees', employee.id, 'edit']">Editar</button>
+                        &nbsp;
+                        <button (click)="onDelete(employee.id)">Excluir</button>
+                    </td>
+                </tr>
+            } @empty {
+                <tr>
+                    <td colspan="6">Nenhum funcionário encontrado.</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

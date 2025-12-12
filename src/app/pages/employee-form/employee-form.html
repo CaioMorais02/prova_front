@@ -1,0 +1,33 @@
+<div class="container">
+    <h2>{{ isEditMode ? 'Editar' : 'Novo' }} Funcionário</h2>
+
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+        <div>
+            <label>Nome:</label><br>
+            <input formControlName="name" type="text">
+        </div>
+
+        <div>
+            <label>Email:</label><br>
+            <input formControlName="email" type="email">
+        </div>
+
+        <div>
+            <label>Cargo (Role):</label><br>
+            <input formControlName="role" type="text">
+        </div>
+
+        <div>
+            <label>
+                <input formControlName="active" type="checkbox">
+                Ativo?
+            </label>
+        </div>
+
+        <br>
+
+        <button type="submit" [disabled]="form.invalid">Salvar</button>
+        &nbsp;
+        <button type="button" routerLink="/employees">Cancelar</button>
+    </form>
+</div>
