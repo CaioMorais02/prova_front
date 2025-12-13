@@ -20,6 +20,13 @@
       "email": "caioedpm@gmail.com",
       "role": "dev",
       "active": true
+    },
+    {
+      "id": "8237",
+      "name": "Methanias",
+      "email": "mjrse@hotmail.com",
+      "role": "Dados",
+      "active": true
     }
   ]
 }

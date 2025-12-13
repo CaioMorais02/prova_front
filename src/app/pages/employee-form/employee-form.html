@@ -5,16 +5,28 @@
         <div>
             <label>Nome:</label><br>
             <input formControlName="name" type="text">
+            @if (form.get('name')?.invalid && form.get('name')?.touched) {
+                <small style="color: red;">Nome é obrigatório.</small>
+            }
         </div>
 
         <div>
             <label>Email:</label><br>
             <input formControlName="email" type="email">
+            @if (form.get('email')?.hasError('required') && form.get('email')?.touched) {
+                <small style="color: red;">Email é obrigatório.</small>
+            }
+            @if (form.get('email')?.hasError('email') && form.get('email')?.touched) {
+                <small style="color: red;">Email inválido.</small>
+            }
         </div>
 
         <div>
             <label>Cargo (Role):</label><br>
             <input formControlName="role" type="text">
+            @if (form.get('role')?.invalid && form.get('role')?.touched) {
+                <small style="color: red;">Cargo é obrigatório.</small>
+            }
         </div>
 
         <div>
