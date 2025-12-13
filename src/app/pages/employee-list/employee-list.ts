@@ -19,9 +19,18 @@ export class EmployeeList implements OnInit {
       this.loadEmployees();
   }
 
+  errorMessage = signal('');
+
   loadEmployees() {
-    this.employeeService.getEmployees().subscribe(data => {
-      this.employees.set(data);
+    this.employeeService.getEmployees().subscribe({
+      next: (data) => {
+        this.employees.set(data);
+        this.errorMessage.set('');
+      },
+      error: (err) => {
+        console.error(err);
+        this.errorMessage.set('Erro ao carregar dados. Tente novamente.');
+      }
     });
   }
 
