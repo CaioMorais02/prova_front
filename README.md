@@ -1,59 +1,74 @@
-# ProvaFront
+# ?? Gerenciamento de Funcionários (Angular 20)
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.3.13.
+Este projeto é uma solução para o desafio técnico de Front-End. Trata-se de um CRUD completo de funcionários utilizando o Angular 20.
 
-## Development server
+## Tecnologias e Padrões Utilizados
 
-To start a local development server, run:
+* **Framework:** Angular 20
+* **Gerenciamento de Estado:** Signals (WritableSignal)
+* **Arquitetura:** Standalone Components (Sem NgModules)
+* **Controle de Fluxo:** sintaxe (`@if`, `@for`)
+* **Formulários:** Reactive Forms Typed & Validations
+* **Estilização:** SCSS
+* **Testes E2E:** Cypress (com Mock de API)
+* **Mock API:** JSON Server
 
-```bash
-ng serve
-```
+## Pré-requisitos
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+Certifique-se de ter instalado em sua máquina:
+* Node.js (v18 ou superior recomendado)
+* NPM
 
-## Code scaffolding
+## Instalação
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+1. Clone o repositório:
+   git clone [https://github.com/CaioMorais02/prova_front.git](https://github.com/CaioMorais02/prova_front.git)
+   cd prova_front
 
-```bash
-ng generate component component-name
-```
+2. Instale as dependências:
+    npm install
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+## Executar o projeto
 
-```bash
-ng generate --help
-```
+Para o projeto funcionar corretamente, precisamos rodar o Back-end simulado (Mock API) e o Front-end simultaneamente.
 
-## Building
+1. Iniciar a API Mock
+    npm run mock:api
 
-To build the project run:
+A API ficará disponível em: http://localhost:3000/employees
 
-```bash
-ng build
-```
+2. Iniciar a Aplicação Angular
+    ng serve
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+Acesse a aplicação em: http://localhost:4200
 
-## Running unit tests
+## Executando os Testes (E2E)
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+O projeto possui cobertura de testes End-to-End utilizando Cypress. Os testes são isolados e utilizam intercept para mockar as respostas da API, garantindo estabilidade.
 
-```bash
-ng test
-```
+Para rodar os testes:
 
-## Running end-to-end tests
+1. Certifique-se de que a aplicação está rodando (ng serve).
 
-For end-to-end (e2e) testing, run:
+2. Execute o comando:
+    npx cypress open
 
-```bash
-ng e2e
-```
+3. Selecione E2E Testing > Chrome > Start.
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+4. Clique no arquivo crud.cy.ts para assistir aos testes.
 
-## Additional Resources
+## Funcionalidades Implementadas
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+[x] Listagem de funcionários.
+
+[x] Busca dinâmica por texto (Nome ou Email).
+
+[x] Cadastro de novo funcionário.
+
+[x] Edição de funcionário existente.
+
+[x] Exclusão com confirmação.
+
+[x] Tratamento de erros de API (Mensagens amigáveis).
+
+[x] Validação de formulários (Campos obrigatórios e formato de email)
